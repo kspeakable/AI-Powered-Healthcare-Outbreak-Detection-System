@@ -1,0 +1,43 @@
+# Healthcare Streaming System - Git Ignore
+
+# Kafka Runtime
+healthcare-streaming/
+kafka-logs/
+zookeeper-logs/
+*.log
+
+# Java Compiled Files
+*.class
+*.jar
+!lib/*.jar
+
+# IDE Files
+.vscode/
+.idea/
+*.iml
+eclipse-workspace/
+
+# OS Files
+.DS_Store
+Thumbs.db
+*~
+
+# Runtime Files
+*.pid
+checkpoint/
+logs/
+
+# Dependencies Downloads
+*.tgz
+*.zip
+*.tar.gz
+weka-3-8-6/
+
+# Temporary Files
+tmp/
+temp/
+*.tmp
+
+# ML Model Files (if saved)
+*.model
+*.arff
