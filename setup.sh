@@ -33,12 +33,42 @@ wget -q https://repo1.maven.org/maven2/org/slf4j/slf4j-simple/1.7.36/slf4j-simpl
 wget -q https://repo1.maven.org/maven2/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar
 
 # Download Weka ML library
-echo "🧠 Downloading Weka ML library..."
-wget -q https://prdownloads.sourceforge.net/weka/weka-3-8-6.zip || \
-wget -q https://sourceforge.net/projects/weka/files/weka-3-8/3.8.6/weka-3-8-6.zip/download -O weka-3-8-6.zip
+echo "🧠 Setting up Weka ML library..."
+if [ ! -f "weka.jar" ]; then
+    echo "   Checking for existing Weka installation..."
+    
+    # First try to copy from working installation
+    if [ -f "$HOME/healthcare-streaming/java-producer/weka.jar" ]; then
+        echo "   Found working Weka JAR, copying..."
+        cp "$HOME/healthcare-streaming/java-producer/weka.jar" .
+        echo "   ✅ Weka JAR copied successfully"
+    else
+        echo "   Attempting download..."
+        # Only try download if copy failed
+        if wget -q --timeout=15 https://prdownloads.sourceforge.net/weka/weka-3-8-6.zip; then
+            echo "   Download successful, extracting..."
+            if unzip -q weka-3-8-6.zip && [ -f "weka-3-8-6/weka.jar" ]; then
+                cp weka-3-8-6/weka.jar .
+                echo "   ✅ Weka extracted successfully"
+            else
+                echo "   ❌ Weka extraction failed"
+                echo "   Please manually copy weka.jar to this directory"
+            fi
+        else
+            echo "   ❌ Download failed - please manually copy weka.jar"
+        fi
+    fi
+else
+    echo "   ✅ Weka already present"
+fi
 
-unzip -q weka-3-8-6.zip
-cp weka-3-8-6/weka.jar .
+# Verify Weka is available
+if [ -f "weka.jar" ]; then
+    echo "   ✅ Weka JAR verified"
+else
+    echo "   ❌ Weka JAR missing - compilation will fail"
+    exit 1
+fi
 
 # Copy source files
 echo "📄 Copying source code..."
