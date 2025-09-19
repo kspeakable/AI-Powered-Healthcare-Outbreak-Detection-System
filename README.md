@@ -54,8 +54,7 @@ cd ai-healthcare-outbreak-detection
 
 2. **Run the setup script**
 ```bash
-chmod +x setup.sh
-./setup.sh
+bash setup.sh
 ```
 
 3. **Start the system**
