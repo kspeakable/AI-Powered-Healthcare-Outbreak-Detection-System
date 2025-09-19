@@ -186,7 +186,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 Karibu Balowa - karibubalowa@gmail.com
 
-Project Link: (https://github.com/Kspeakable/ai-healthcare-outbreak-detection)
+Project Link: (https://github.com/kspeakable/ai-healthcare-outbreak-detection)
 
 ---
 
