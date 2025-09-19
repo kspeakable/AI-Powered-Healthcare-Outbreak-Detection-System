@@ -54,19 +54,20 @@ cd ai-healthcare-outbreak-detection
 
 2. **Run the setup script**
 ```bash
+# Run the setup
 bash setup.sh
 ```
 
 3. **Start the system**
 ```bash
 # Terminal 1: Start Kafka
-./start-kafka.sh
+bash start-kafka.sh
 
 # Terminal 2: Start AI Predictor
-./run-ai-predictor.sh
+bash run-ai-predictor.sh
 
 # Terminal 3: Start Data Generator
-./run-data-generator.sh
+bash run-data-generator.sh
 ```
 
 ## 📊 System Output
@@ -183,9 +184,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Contact
 
-**Your Name** - [your-email@example.com](mailto:your-email@example.com)
+Karibu Balowa - karibubalowa@gmail.com
 
-Project Link: [https://github.com/YOUR_USERNAME/ai-healthcare-outbreak-detection](https://github.com/YOUR_USERNAME/ai-healthcare-outbreak-detection)
+Project Link: (https://github.com/Kspeakable/ai-healthcare-outbreak-detection)
 
 ---
 
